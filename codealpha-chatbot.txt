@@ -1,0 +1,40 @@
+#Task_3#CodeAlpha#Internship
+import nltk
+from nltk.chat.util import Chat, reflections
+
+pairs = [
+    [
+        r"my name is (.*)",
+        ["Hello %1, how can I help you today?"]
+    ],
+    [
+        r"What is your name?",
+        ["My name is ChatBot and I'm here to assist you."]
+    ],
+    [
+        r"how are you?",
+        ["I'm doing well, thanks for asking."]
+    ],
+    [
+        r"(.) (weather|temperature) in (.)?",
+        ["I don't have real-time weather information, but you can check a weather website or app for the latest updates."]
+    ],
+    [
+        r"Quit",
+        ["Goodbye! Have a good day."]
+    ],
+]
+
+chatbot = Chat(pairs, reflections)
+
+def chat_bot():
+    print("Welcome to the Chatbot!\n")
+    print("Type 'Quit' to end the conversation.")
+    while True:
+        user_input = input("You: ")
+        response = chatbot.respond(user_input)
+        print("ChatBot:", response)
+        if user_input.lower() == 'quit':
+            break
+
+chat_bot()
