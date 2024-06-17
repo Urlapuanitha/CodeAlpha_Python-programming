@@ -1,7 +1,7 @@
 import requests
 
 ticker = "MSFT"
-api_key = "a16e9524a57143938a19ee8cf8ab7e47"
+api_key = "f64397f25bcf46c1b10c96d5ad421834"
 
 def get_stock_price(ticker_symbol, api):
     url = f"https://api.twelvedata.com/price?symbol={ticker_symbol}&apikey={api}"
